@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
+// import { useQuery } from "@tanstack/react-query";
 import BlogHeader from "@/components/blog/BlogHeader";
 import BlogTabs from "@/components/blog/BlogTabs";
 import BlogAbout from "@/components/blog/BlogAbout";
@@ -7,6 +7,7 @@ import BlogGallery from "@/components/blog/BlogGallery";
 import BlogPosts from "@/components/blog/BlogPosts";
 import { type BlogPost, type Gallery } from "@shared/blogSchema";
 import { ImageIcon } from "lucide-react";
+import { staticBlogPosts, staticGalleryItems } from "@/data/staticData";
 
 export default function Blog() {
   const [activeTab, setActiveTab] = useState<'about' | 'gallery' | 'posts'>('about');
@@ -22,13 +23,20 @@ export default function Blog() {
     }, 100);
   };
 
-  const { data: blogPosts = [], isLoading: postsLoading } = useQuery<BlogPost[]>({
-    queryKey: ['/api/blog/posts'],
-  });
+  // Old API calls - commented out for static deployment
+  // const { data: blogPosts = [], isLoading: postsLoading } = useQuery<BlogPost[]>({
+  //   queryKey: ['/api/blog/posts'],
+  // });
 
-  const { data: galleryItems = [], isLoading: galleryLoading } = useQuery<Gallery[]>({
-    queryKey: ['/api/gallery'],
-  });
+  // const { data: galleryItems = [], isLoading: galleryLoading } = useQuery<Gallery[]>({
+  //   queryKey: ['/api/gallery'],
+  // });
+
+  // Using static data instead of API calls
+  const blogPosts = staticBlogPosts;
+  const postsLoading = false;
+  const galleryItems = staticGalleryItems;
+  const galleryLoading = false;
 
   return (
     <div className="min-h-screen bg-gray-50">

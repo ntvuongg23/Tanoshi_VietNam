@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
+// import { useQuery } from "@tanstack/react-query";
 import { Calendar, User, ArrowRight, ImageIcon } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
 import { vi } from "date-fns/locale";
 import { type BlogPost, type Gallery } from "@shared/blogSchema";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { staticBlogPosts, staticGalleryItems } from "@/data/staticData";
 
 interface ImageWithFallbackProps {
   src: string;
@@ -54,13 +55,20 @@ function ImageWithFallback({ src, alt, className }: ImageWithFallbackProps) {
 }
 
 export default function LatestSection() {
-  const { data: blogPosts = [], isLoading: postsLoading } = useQuery<BlogPost[]>({
-    queryKey: ['/api/blog/posts'],
-  });
+  // Old API calls - commented out for static deployment
+  // const { data: blogPosts = [], isLoading: postsLoading } = useQuery<BlogPost[]>({
+  //   queryKey: ['/api/blog/posts'],
+  // });
 
-  const { data: galleryItems = [], isLoading: galleryLoading } = useQuery<Gallery[]>({
-    queryKey: ['/api/gallery'],
-  });
+  // const { data: galleryItems = [], isLoading: galleryLoading } = useQuery<Gallery[]>({
+  //   queryKey: ['/api/gallery'],
+  // });
+
+  // Using static data instead of API calls
+  const blogPosts = staticBlogPosts;
+  const postsLoading = false;
+  const galleryItems = staticGalleryItems;
+  const galleryLoading = false;
 
   const latestPosts = blogPosts.slice(0, 3);
   const latestGallery = galleryItems.slice(0, 6);
