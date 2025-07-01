@@ -45,12 +45,12 @@ export default function BlogHeader() {
   };
 
   const menuItems = [
-    { icon: Home, label: 'Trang chủ', href: '/' },
-    { icon: Info, label: 'Giới thiệu', href: '/#about' },
-    { icon: FileText, label: 'Dự án', href: '/#projects' },
-    { icon: Mail, label: 'Liên hệ', href: '/#contact' },
-    { icon: User, label: 'Hồ sơ', href: '/profile' },
-    { icon: Settings, label: 'Cài đặt', href: '/settings' },
+    { icon: Home, label: 'Trang chủ', href: '/', isExternal: false },
+    { icon: Info, label: 'Giới thiệu', href: '/#about', isExternal: true },
+    { icon: FileText, label: 'Dự án', href: '/#projects', isExternal: true },
+    { icon: Mail, label: 'Liên hệ', href: '/#contact', isExternal: true },
+    { icon: User, label: 'Hồ sơ', href: '/profile', isExternal: false },
+    { icon: Settings, label: 'Cài đặt', href: '/settings', isExternal: false },
   ];
 
   return (
@@ -135,12 +135,26 @@ export default function BlogHeader() {
                 {/* Navigation Items */}
                 <div className="py-2 flex-1 overflow-y-auto">
                   {menuItems.map((item, index) => (
-                    <Link key={index} href={item.href} onClick={closeMenu}>
-                      <div className="menu-item flex items-center px-4 sm:px-4 py-4 sm:py-3 text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors cursor-pointer border-b sm:border-b-0 border-gray-100 last:border-b-0">
-                        <item.icon className="w-6 h-6 sm:w-5 sm:h-5 mr-4 sm:mr-3 text-gray-400 group-hover:text-blue-500" />
-                        <span className="font-medium text-base sm:text-sm">{item.label}</span>
-                      </div>
-                    </Link>
+                    item.isExternal ? (
+                      <a
+                        key={index}
+                        href={`${import.meta.env.PROD ? '/GoParking' : ''}${item.href}`}
+                        onClick={closeMenu}
+                        className="block"
+                      >
+                        <div className="menu-item flex items-center px-4 sm:px-4 py-4 sm:py-3 text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors cursor-pointer border-b sm:border-b-0 border-gray-100 last:border-b-0">
+                          <item.icon className="w-6 h-6 sm:w-5 sm:h-5 mr-4 sm:mr-3 text-gray-400 group-hover:text-blue-500" />
+                          <span className="font-medium text-base sm:text-sm">{item.label}</span>
+                        </div>
+                      </a>
+                    ) : (
+                      <Link key={index} href={item.href} onClick={closeMenu}>
+                        <div className="menu-item flex items-center px-4 sm:px-4 py-4 sm:py-3 text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors cursor-pointer border-b sm:border-b-0 border-gray-100 last:border-b-0">
+                          <item.icon className="w-6 h-6 sm:w-5 sm:h-5 mr-4 sm:mr-3 text-gray-400 group-hover:text-blue-500" />
+                          <span className="font-medium text-base sm:text-sm">{item.label}</span>
+                        </div>
+                      </Link>
+                    )
                   ))}
                 </div>
 

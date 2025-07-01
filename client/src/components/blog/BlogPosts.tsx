@@ -107,7 +107,7 @@ export default function BlogPosts({ posts, isLoading, fullView = false, onViewGa
             </div>
             <div className="flex items-center space-x-2">
               <ShareButton
-                url={`${window.location.origin}/blog/post/${post.id}`}
+                url={`${window.location.origin}${import.meta.env.PROD ? '/GoParking' : ''}/blog/post/${post.id}`}
                 title={post.title}
                 description={post.excerpt || post.content.substring(0, 200)}
                 className="z-10"
