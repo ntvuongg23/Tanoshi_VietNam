@@ -47,7 +47,7 @@ export const staticBlogPosts: BlogPost[] = [
     title: "DevOps and Continuous Integration",
     content: "Modern software development relies heavily on automation, continuous integration, and deployment pipelines. These practices enable teams to deliver high-quality software faster and more reliably.",
     excerpt: "How DevOps practices transform software development workflows.",
-    imageUrl: "https://picsum.photos/800/400?random=5",
+    imageUrl: "https://bairesdev.mo.cloudinary.net/blog/2023/05/CI-for-DevOps.jpg?tx=w_3840,q_auto",
     published: true,
     createdAt: new Date("2023-12-20T11:20:00Z"),
     updatedAt: new Date("2023-12-20T11:20:00Z")
@@ -59,42 +59,42 @@ export const staticGalleryItems: Gallery[] = [
   {
     id: 1,
     title: "Autumn Castle",
-    imageUrl: "https://picsum.photos/400/300?random=1",
+    imageUrl: "https://tse4.mm.bing.net/th/id/OIP.uMltvWq-V-7Zji-nzZ0-MgHaEo?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
     description: "Beautiful autumn colors around Japanese castle",
     createdAt: new Date("2024-01-15T10:00:00Z")
   },
   {
     id: 2,
     title: "Mountain View",
-    imageUrl: "https://picsum.photos/400/300?random=2",
+    imageUrl: "https://wallpapercave.com/wp/wp3819437.jpg",
     description: "Serene mountain landscape in autumn",
     createdAt: new Date("2024-01-14T10:00:00Z")
   },
   {
     id: 3,
     title: "City Lights",
-    imageUrl: "https://picsum.photos/400/300?random=3",
+    imageUrl: "https://tse3.mm.bing.net/th/id/OIP.K7QCL2gnkjcyPrbSgwp2_QHaEo?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
     description: "Urban nightscape with vibrant lights",
     createdAt: new Date("2024-01-13T10:00:00Z")
   },
   {
     id: 4,
     title: "Ocean Waves",
-    imageUrl: "https://picsum.photos/400/300?random=4",
+    imageUrl: "https://images.pexels.com/photos/1473080/pexels-photo-1473080.jpeg?cs=srgb&dl=ocean-waves-during-sunset-1473080.jpg&fm=jpg",
     description: "Peaceful ocean waves at sunset",
     createdAt: new Date("2024-01-12T10:00:00Z")
   },
   {
     id: 5,
     title: "Forest Path",
-    imageUrl: "https://picsum.photos/400/300?random=5",
+    imageUrl: "https://tse3.mm.bing.net/th/id/OIP.nJ7CVOz61vFHc9VhCwTPzAHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
     description: "Mystical forest path in morning light",
     createdAt: new Date("2024-01-11T10:00:00Z")
   },
   {
     id: 6,
     title: "Desert Dunes",
-    imageUrl: "https://picsum.photos/400/300?random=6",
+    imageUrl: "https://tse3.mm.bing.net/th/id/OIP.O96iHWVpHcthLAF0E8KqMAHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
     description: "Golden sand dunes under blue sky",
     createdAt: new Date("2024-01-10T10:00:00Z")
   }

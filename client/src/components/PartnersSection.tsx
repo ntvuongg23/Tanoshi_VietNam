@@ -144,7 +144,7 @@ export default function PartnersSection() {
   return (
     <section className="py-16 bg-blue-50-custom" aria-labelledby="partners-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 id="partners-heading" className="text-2xl font-bold text-primary-custom mb-12">
+        <h2 id="partners-heading" className="text-2xl font-bold text-green-600 mb-12">
           ĐỐI TÁC TIÊU BIỂU
         </h2>
         <p className="text-gray-600 mb-8 max-w-2xl mx-auto">

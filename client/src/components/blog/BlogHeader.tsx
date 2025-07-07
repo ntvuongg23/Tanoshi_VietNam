@@ -45,9 +45,9 @@ export default function BlogHeader() {
   };
 
   const menuItems = [
-    { icon: Home, label: 'Trang chủ', href: '/', isExternal: false },
+    { icon: Home, label: 'Trang chủ', href: '/', isExternal: true },
     { icon: Info, label: 'Giới thiệu', href: '/#about', isExternal: true },
-    { icon: FileText, label: 'Dự án', href: '/#projects', isExternal: true },
+    { icon: FileText, label: 'Dự án', href: '/project', isExternal: true },
     { icon: Mail, label: 'Liên hệ', href: '/#contact', isExternal: true },
     { icon: User, label: 'Hồ sơ', href: '/profile', isExternal: false },
     { icon: Settings, label: 'Cài đặt', href: '/settings', isExternal: false },

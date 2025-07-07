@@ -24,13 +24,10 @@ export default function Navigation() {
   };
 
   const navigationItems = [
-    { label: "Home", id: "home", isRoute: false },
-    { label: "About", id: "about", isRoute: false },
-    { label: "Service", id: "services", isRoute: false },
-    { label: "Project", id: "/project", isRoute: true },
+    { label: "Home", id: "/", isRoute: true },
+    { label: "Services", id: "services", isRoute: false },
+    { label: "Projects", id: "/project", isRoute: true },
     { label: "Blog", id: "/blog", isRoute: true },
-    { label: "FaQ", id: "faq", isRoute: false },
-    { label: "Contact", id: "contact", isRoute: false },
   ];
 
   return (
@@ -39,20 +36,23 @@ export default function Navigation() {
     } border-b border-gray-100`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center space-x-3">
-            <img
-              src="https://i.ibb.co/gMrnFSgY/Gemini-Generated-Image-8bg4kw8bg4kw8bg4.png"
-              alt="Go Parking Logo"
-              className="w-8 h-8 object-contain"
-            />
-            <span className="text-xl font-bold text-blue-800">Go Parking</span>
-          </div>
+          <Link href="/">
+            <div className="flex items-center space-x-3 cursor-pointer">
+              <img
+                src="https://i.postimg.cc/jCgx28dn/Tanoshi-Vietnam.jpg"
+                alt="Tanoshi Vietnam Logo"
+                className="w-8 h-8 object-contain"
+                loading="lazy"
+              />
+              <span className="text-xl font-bold text-green-600">Tanoshi Vietnam</span>
+            </div>
+          </Link>
           
           <div className="hidden md:flex items-center space-x-8">
             {navigationItems.map((item) => (
               item.isRoute ? (
                 <Link key={item.id} href={item.id}>
-                  <span className="text-gray-600 hover:text-primary-custom transition-colors font-medium cursor-pointer">
+                  <span className="text-gray-600 hover:text-green-600 transition-colors font-medium cursor-pointer">
                     {item.label}
                   </span>
                 </Link>
@@ -60,12 +60,18 @@ export default function Navigation() {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-gray-600 hover:text-primary-custom transition-colors font-medium"
+                  className="text-gray-600 hover:text-green-600 transition-colors font-medium"
                 >
                   {item.label}
                 </button>
               )
             ))}
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition-colors font-medium"
+            >
+              Contact
+            </button>
           </div>
 
           <Sheet>
@@ -79,7 +85,7 @@ export default function Navigation() {
                 {navigationItems.map((item) => (
                   item.isRoute ? (
                     <Link key={item.id} href={item.id}>
-                      <span className="text-left text-gray-600 hover:text-primary-custom transition-colors font-medium py-2 block">
+                      <span className="text-left text-gray-600 hover:text-green-600 transition-colors font-medium py-2 block">
                         {item.label}
                       </span>
                     </Link>
@@ -87,7 +93,7 @@ export default function Navigation() {
                     <button
                       key={item.id}
                       onClick={() => scrollToSection(item.id)}
-                      className="text-left text-gray-600 hover:text-primary-custom transition-colors font-medium py-2"
+                      className="text-left text-gray-600 hover:text-green-600 transition-colors font-medium py-2"
                     >
                       {item.label}
                     </button>
