@@ -5,14 +5,38 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Link } from "wouter";
 
 export default function Navigation() {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrollingDown, setIsScrollingDown] = useState(false);
 
   useEffect(() => {
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+
+          // Determine scroll direction with a smaller threshold
+          if (currentScrollY > lastScrollY && currentScrollY > 50) {
+            // Scrolling down and past 50px
+            setIsScrollingDown(true);
+          } else if (currentScrollY < lastScrollY || currentScrollY <= 50) {
+            // Scrolling up or near top
+            setIsScrollingDown(false);
+          }
+
+          lastScrollY = currentScrollY;
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    // Check initial scroll position
+    const initialScrollY = window.scrollY;
+    setIsScrollingDown(initialScrollY > 50);
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -31,9 +55,11 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? "bg-white/95 backdrop-blur-sm shadow-lg" : "bg-white/95 backdrop-blur-sm"
-    } border-b border-gray-100`}>
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ease-in-out ${
+      isScrollingDown
+        ? "bg-white/30 backdrop-blur-sm shadow-none border-gray-100/20"
+        : "bg-white/95 backdrop-blur-lg shadow-lg border-gray-200"
+    } border-b`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/">

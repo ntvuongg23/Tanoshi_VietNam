@@ -138,7 +138,7 @@ export default function BlogHeader() {
                     item.isExternal ? (
                       <a
                         key={index}
-                        href={`${import.meta.env.PROD ? '/GoParking' : ''}${item.href}`}
+                        href={`${import.meta.env.PROD ? '/Tanoshi_VietNam' : ''}${item.href}`}
                         onClick={closeMenu}
                         className="block"
                       >

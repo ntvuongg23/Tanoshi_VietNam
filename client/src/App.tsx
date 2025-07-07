@@ -10,9 +10,9 @@ import NotFound from "@/pages/not-found";
 
 // Get base path for GitHub Pages deployment
 const getBasePath = () => {
-  // In production (GitHub Pages), use /GoParking/
+  // In production (GitHub Pages), use /Tanoshi_VietNam/
   // In development, use /
-  return import.meta.env.PROD ? "/GoParking" : "";
+  return import.meta.env.PROD ? "/Tanoshi_VietNam" : "";
 };
 
 function AppRouter() {

@@ -11,6 +11,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import ProjectModal from "@/components/ProjectModal";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
       <ContactSection />
       <Footer />
       <ProjectModal />
+      <ScrollToTop />
     </div>
   );
 }
