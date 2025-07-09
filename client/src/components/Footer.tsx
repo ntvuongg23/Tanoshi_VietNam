@@ -10,13 +10,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <Link href="/">
-              <div className="flex items-center space-x-3 cursor-pointer">
-                <img
-                  src="https://i.postimg.cc/jCgx28dn/Tanoshi-Vietnam.jpg"
-                  alt="Tanoshi Vietnam Logo"
-                  className="w-8 h-8 object-contain"
-                  loading="lazy"
-                />
+              <div className="flex items-center cursor-pointer">
                 <span className="text-xl font-bold text-green-400">Tanoshi Vietnam</span>
               </div>
             </Link>

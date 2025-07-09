@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Link } from "wouter";
@@ -63,13 +63,7 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/">
-            <div className="flex items-center space-x-3 cursor-pointer">
-              <img
-                src="https://i.postimg.cc/jCgx28dn/Tanoshi-Vietnam.jpg"
-                alt="Tanoshi Vietnam Logo"
-                className="w-8 h-8 object-contain"
-                loading="lazy"
-              />
+            <div className="flex items-center cursor-pointer">
               <span className="text-xl font-bold text-green-600">Tanoshi Vietnam</span>
             </div>
           </Link>

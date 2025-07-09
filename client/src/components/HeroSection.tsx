@@ -1,5 +1,3 @@
-import { Button } from "@/components/ui/button";
-
 export default function HeroSection() {
   return (
     <section className="relative bg-white overflow-hidden min-h-screen flex items-center">
@@ -25,20 +23,19 @@ export default function HeroSection() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button
-              size="lg"
-              className="bg-green-600 text-white hover:bg-green-700 transition-all duration-200 px-8 py-4 text-lg font-medium rounded-md"
+          <div className="mt-12 flex items-center justify-center gap-2">
+            <a
+              href="#projects"
+              className="inline-flex items-center justify-center h-[38px] px-4 py-2 text-sm font-normal rounded-md bg-green-600 text-white hover:bg-green-700 transition-all duration-200 ease-out space-x-2"
             >
-              Our Projects
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="bg-transparent text-gray-700 border border-gray-300 hover:border-gray-400 hover:bg-gray-50 transition-all duration-200 px-8 py-4 text-lg font-medium rounded-md"
+              <span>Our Projects</span>
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center justify-center h-[38px] px-4 py-2 text-sm font-normal rounded-md bg-gray-100 text-gray-700 border border-gray-300 hover:bg-gray-200 hover:border-gray-400 transition-all duration-200 ease-out space-x-2"
             >
-              Contact Us
-            </Button>
+              <span>Contact Us</span>
+            </a>
           </div>
 
           {/* Partner Logos Carousel */}
